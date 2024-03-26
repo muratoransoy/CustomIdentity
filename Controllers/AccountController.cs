@@ -36,7 +36,7 @@ public class AccountController(SignInManager<AppUser> signInManager, UserManager
             var result = await signInManager.PasswordSignInAsync(model.Username, model.Password, model.RememberMe, false);
             if (result.Succeeded)
             {
-                // Eğer e-posta doğrulaması yapılmışsa, kullanıcıyı belirtilen returnUrl'a yönlendir
+                //  Eğer e-posta doğrulaması yapılmışsa, kullanıcıyı belirtilen returnUrl'a yönlendir
                 return RedirectToLocal(returnUrl);
             }
             else if (result.IsNotAllowed)
