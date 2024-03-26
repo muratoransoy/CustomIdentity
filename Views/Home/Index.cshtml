@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container">
+    <div class="text-center">
+        <h1 class="display-4">Welcome</h1>
+        @if (!User.Identity.IsAuthenticated)
+        {
+            <div class="alert alert-warning" role="alert">
+                Your email address <strong>@User.Identity.Name</strong> has not been confirmed yet. Please check your email and confirm your account to access all features.
+            </div>
+        }
+        else
+        {
+            <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+        }
+    </div>
+</div>
